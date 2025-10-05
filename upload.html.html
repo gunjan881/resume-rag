@@ -28,7 +28,7 @@ function goToMatch() {
   reader.onload = function(e) {
     localStorage.setItem("resumeFile", e.target.result); // store file
     localStorage.setItem("resumeName", file.name);
-    window.location.href = "index.html"; // go to job match page
+    window.location.href = "job-match.html"; // go to job match page
   };
   reader.readAsDataURL(file); // read file
 }
