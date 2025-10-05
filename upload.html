@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Resume - Resume RAG</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Upload Your Resume</h1>
+  <input type="file" id="resumeInput" accept=".pdf,.doc,.docx,.txt">
+  <button onclick="goToMatch()">Next: Find Jobs</button>
+</div>
+
+<script>
+function goToMatch() {
+  const fileInput = document.getElementById("resumeInput");
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Please upload a file first!");
+    return;
+  }
+
+  // Convert file to base64 and store in localStorage (simple demo)
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    localStorage.setItem("resumeFile", e.target.result); // store file
+    localStorage.setItem("resumeName", file.name);
+    window.location.href = "index.html"; // go to job match page
+  };
+  reader.readAsDataURL(file); // read file
+}
+</script>
+</body>
+</html>
