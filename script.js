@@ -2,7 +2,6 @@ const jobs = [
   { title: "Frontend Developer", skills: "HTML, CSS, JavaScript, React" }, 
   { title: "Data Scientist", skills: "Python, ML, NLP, Embeddings" },
   { title: "Backend Developer", skills: "Node.js, Express, PostgreSQL, APIs" }
-  { title: "AI Engineer", skills: "Python" , "Tensorflow", "Deep Learning"}
 ]; 
 
 function matchJobs(){ 
